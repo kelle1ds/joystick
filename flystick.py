@@ -41,10 +41,9 @@ def main():
     pygame.init()
 
     # Reading only "clicks" via events. These are used for advanced
-    # mappings. Events to avoid tracking state manually. Axes are read
-    # by snapshotting.
-    pygame.event.set_allowed([pygame.JOYBUTTONDOWN,
-                              pygame.JOYHATMOTION])
+    # mappings. Events to avoid tracking state manually. Axes are read by snapshotting.
+
+    pygame.event.set_allowed([pygame.JOYBUTTONDOWN, pygame.JOYHATMOTION])
 
     pi_gpio = 1 << PPM_OUTPUT_PIN
 
