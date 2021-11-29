@@ -3,31 +3,24 @@ import pygame.joystick
 
 class Ch(object):
     """Implements channel mixing.
-
     Mix examples:
-
         Reverse:
             -stick.axis(0)
-
         Offset:
             stick.axis(0) - 0.1
-
         Weight:
             stick.axis(0) * 0.5
-
         Mixing:
             stick.axis(0) - stick.axis(1) * 0.5
-
         Trim:
             stick.axis(0) - Switch(..) * 0.5
-
         Reverse + offset + weight + trim:
             (-stick.axis(0) + 0.1) * 0.7 - Switch(..) * 0.5
-
     Also a shortcut to scale the output to range [0..1]
     instead of the normal [-1..1]:
         +stick.axis(0)
     """
+    
     def __init__(self, fn):
         self.fn = fn
 
