@@ -43,7 +43,7 @@ def main():
     # Reading only "clicks" via events. These are used for advanced
     # mappings. Events to avoid tracking state manually. Axes are read by snapshotting.
 
-    pygame.event.set_allowed([pygame.JOYBUTTONDOWN, pygame.JOYHATMOTION])
+    pygame.event.set_allowed([pygame.JOYBUTTONDOWN, pygame.JOYHATMOTION, pygame.JOYAXISMOTION])
 
     pi_gpio = 1 << PPM_OUTPUT_PIN
 
@@ -69,6 +69,9 @@ def main():
                 clicks.append(evt)
             elif evt.type == pygame.JOYHATMOTION and any(evt.value):
                 # print("JOYHATMOTION: %r\n%s" % (evt, dir(evt)))
+                hats.append(evt)
+            elif evt.type == pygame.JOYAXISMOTION:
+                # print(JOYAXISMOTION: %r\n%s" % (evt, dir(evt)))
                 hats.append(evt)
 
         # tuple to enforce immutability
